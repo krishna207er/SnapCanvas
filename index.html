@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnapCanvas - Image Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sticky Header -->
+    <header id="sticky-header">
+        <div class="brand-container">
+            <h1 class="app-title">SnapCanvas</h1>
+            <p class="app-tagline">Discover and collect high-resolution photography instantly.</p>
+        </div>
+
+        <!-- Search Control Form -->
+        <form id="search-form" onsubmit="event.preventDefault();">
+            <div class="search-input-wrapper">
+                <label for="search-input" class="sr-only">Search images</label>
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    placeholder="Search for wallpapers, nature, cityscapes..." 
+                    autocomplete="off"
+                >
+                <button type="button" id="clear-btn" title="Clear search">×</button>
+            </div>
+            <button type="submit" id="search-btn">Search</button>
+        </form>
+
+        <!-- Category / Quick-Pick Row (Original Feature 1) -->
+        <div class="quick-picks">
+            <span class="chip">Nature</span>
+            <span class="chip">Architecture</span>
+            <span class="chip">Minimal</span>
+            <span class="chip">Technology</span>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Result-count placeholder & Empty-state message -->
+        <div id="results-info">
+            <p id="result-count"></p>
+        </div>
+
+        <!-- Empty Results Container (Strictly empty, no hardcoded images) -->
+        <div id="results" class="results-grid">
+            <div class="empty-state">
+                <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/></svg>
+                <p>Search to see results</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
